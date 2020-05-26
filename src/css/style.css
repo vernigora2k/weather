@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 640px;
+    height: 510px;
+    background: #ffffff;
+    position: absolute;
+    font-family: 'Barlow Semi Condensed';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.wrapper {
+    margin: 25px auto;
+}
+
+/* section-weather ============================*/
+section.weather-app {
+    width: 600px;
+    height: 470px;
+}
+
+    .row-search {
+        height: 35px;
+    }
+
+        .row-search__search {
+            width: 450px;
+            border: 1px solid black;
+        }
+
+            input.search-input {
+                width: 100%;
+                border: none;
+            }
+
+        .row-search__time {
+            width: 150px;
+            border: 1px solid black;
+            border-left: none;
+        }
+    .row-main {
+        height: 440px;
+    }
+
+        .row-main__media {
+        }
+
+            .row-main__media-screen {
+                height: 410px;
+                width: 300px;
+                border: 1px solid black;
+                border-top: none;
+            }
+
+            .row-main__media-menu {
+                height: 30px;
+                width: 300px;
+                border: 1px solid black;
+                border-top: none;
+            }
+
+        .row-main__locations-list {
+            width: 300px;
+        }
+
+            .locations-list-title {
+                height: 75px;
+                border-right: 1px solid black;
+            }
+
+            .locations-list-list {
+                height: 365px;
+                border: 1px solid black;
+                border-left: none;
+            }

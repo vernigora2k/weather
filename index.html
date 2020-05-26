@@ -3,10 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="stylesheet" href="./src/fonts/barlow-semi-condensed.css">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <section class="weather-app wrapper">
+            <div class="row-search flex">
+                <div class="row-search__search">
+                    <form class="search" action="#">
+                        <input class="search-input" type="text" value="Aktobe" onfocus="value = ''">
+                    </form>
+                </div>
+                <div class="row-search__time">
+                    <span>time</span>
+                </div>
+            </div>
+            <div class="row-main flex">
+                <div class="row-main__media">
+                    <div class="row-main__media-screen">
+                        <div class="media__row1"></div>
+                        <div class="media__row2"></div>
+                        <div class="media__row3"></div>
+                        <div class="media__row4"></div>
+                    </div>
+                    <div class="row-main__media-menu">
+                        <button class="weather-now"></button>
+                        <button class="weather-now-details"></button>
+                        <button class="weather-forecast"></button>
+                    </div>
+                </div>
+                <div class="row-main__locations-list">
+                    <div class="locations-list-title">
+                        <span></span>
+                    </div>
+                    <div class="locations-list-list">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <script type="module" src="js/index.js"></script>
 </body>
 </html>
