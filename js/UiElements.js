@@ -1,0 +1,1 @@
+export const mainScreenTemp = document.querySelector('.temp');

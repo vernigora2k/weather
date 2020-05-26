@@ -60,6 +60,7 @@ section.weather-app {
 
             input.search-input {
                 width: 92%;
+                height: 100%;
                 border: none;
                 opacity: 0.65;
                 font-size: 22px;
@@ -93,9 +94,35 @@ section.weather-app {
             .row-main__media-screen {
                 height: 410px;
                 width: 300px;
+                flex-direction: column;
                 border: 1px solid black;
                 border-top: none;
             }
+
+                .media__row1 {
+                    background-color: lightgreen;
+                    font-size: 76px;
+                    font-weight: 500;
+                    height: 120px;
+                }
+
+                    p.temp {
+                        margin-left: 20px;
+                        margin-top: 40px;
+                    }
+
+                    sup {
+                        font-weight: 300;
+                        font-size: 45px;
+                    }
+
+                .media__row2 {
+                    background-color: lightsalmon;
+                }
+
+                .media__row3 {
+                    background-color: lightskyblue;
+                }
 
             .row-main__media-menu {
                 height: 30px;
