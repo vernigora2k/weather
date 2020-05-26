@@ -33,6 +33,16 @@ body {
     margin: 25px auto;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 /* section-weather ============================*/
 section.weather-app {
     width: 600px;
@@ -49,8 +59,23 @@ section.weather-app {
         }
 
             input.search-input {
-                width: 100%;
+                width: 92%;
                 border: none;
+                opacity: 0.65;
+                font-size: 22px;
+                padding-left: 10px;
+            }
+
+            input.search-input:focus {
+                opacity: 1;
+            }
+
+            input.submit {
+                width: 8%;
+                background-image: url(../img/lupa-search.png);
+                background-size: 20px;
+                background-repeat: no-repeat;
+                background-position: 5px 7px;
             }
 
         .row-search__time {
@@ -79,6 +104,17 @@ section.weather-app {
                 border-top: none;
             }
 
+                .menu-button {
+                    width: 33.3%;
+                    height: 30px;
+                    font-size: 20px;
+                }
+
+                .button-active {
+                    background-color: black;
+                    color: white
+                }
+
         .row-main__locations-list {
             width: 300px;
         }
@@ -86,6 +122,8 @@ section.weather-app {
             .locations-list-title {
                 height: 75px;
                 border-right: 1px solid black;
+                text-align: center;
+                padding-top: 25px;
             }
 
             .locations-list-list {
