@@ -83,6 +83,9 @@ section.weather-app {
             width: 150px;
             border: 1px solid black;
             border-left: none;
+            text-align: center;
+            padding-top: 7px;
+            font-size: 20px;
         }
     .row-main {
         height: 440px;
