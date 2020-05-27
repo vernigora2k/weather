@@ -1,9 +1,25 @@
-import { currentWeather } from './controller.js';
-import { mainScreenTemp } from './UiElements.js';
+import { currentWeather, currentLocalTime } from './controller.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon } from './UiElements.js';
 
 // button.addEventListener('click', () => {
 //     currentWeather()
 // }) 
-console.log(currentWeather('New York'))
+currentWeather('Tokio')
+    .then(data => {
+        console.log(data.data[0])
+        console.log(data.data[0].temp)
+        mainScreenTemp.innerHTML = Math.round(data.data[0].temp) + '<sup>0</sup>'
+        console.log(data.data[0].weather.description)
+        console.log(mainScreenWeatherDescription)
+        mainScreenWeatherDescription.innerHTML = data.data[0].weather.description
+        mainScreenWeatherIcon.innerHTML = `<img src=../src/img/weather-icons/${data.data[0].weather.icon}.png>`
+    })
+    .catch(alert)
     
-mainScreenTemp.innerHTML = '15' + '<sup>0</sup>';
+currentLocalTime('America/Mexico_City')
+    .then(data => {
+        console.log(data.datetime.slice(11,16))
+        return data.datetime.slice(11,16)
+    })
+    .catch(alert)
+
