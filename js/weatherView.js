@@ -1,4 +1,4 @@
-import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd } from './controller.js';
+import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList } from './UiElements.js';
 
 // button.addEventListener('click', () => {
@@ -26,6 +26,7 @@ searchForm.addEventListener('submit', () => {
 mainScreenIconHeart.addEventListener('click', () => {
     if (mainScreenActivatedCity.innerHTML) {
         imgSrcChanger()
+        iconHeartClassChange()
         console.log(mainScreenActivatedCity.innerHTML)
         newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
     }

@@ -37,9 +37,18 @@ export function imgSrcChanger() {
     iconHeartImg.src=imgSrcChanger.images[imgSrcChanger.i]
 }
 
+export function iconHeartClassChange() {
+    if(!iconHeartImg.classList.contains('active')) {
+    iconHeartImg.classList.add('active')
+    } else {
+        iconHeartImg.classList.remove('active')
+    }
+}
+
 export function newFavoriteCityAdd (newCity) {
     let newCityItem = document.createElement('div')
     newCityItem.classList.add('favorite-city-item')
     newCityItem.innerHTML = `<p>${newCity}</p>`
     favoriteLocationsList.append(newCityItem)
 }
+
