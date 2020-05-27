@@ -1,5 +1,5 @@
-import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart } from './UiElements.js';
+import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd } from './controller.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList } from './UiElements.js';
 
 // button.addEventListener('click', () => {
 //     currentWeather()
@@ -24,8 +24,11 @@ searchForm.addEventListener('submit', () => {
 })
 
 mainScreenIconHeart.addEventListener('click', () => {
-    //mainScreenIconHeart.innerHTML = `<img src="./src/img/heart-black.png" width="50px" alt=""></img>`
-    imgSrcChanger()
+    if (mainScreenActivatedCity.innerHTML) {
+        imgSrcChanger()
+        console.log(mainScreenActivatedCity.innerHTML)
+        newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
+    }
 })
 
 

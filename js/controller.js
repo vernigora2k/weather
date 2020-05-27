@@ -1,5 +1,5 @@
 import {apiRequest} from './apiClient.js';
-import { iconHeartImg } from './UiElements.js';
+import { iconHeartImg, favoriteLocationsList } from './UiElements.js';
 
 //currentWeather('Kyiv')
 
@@ -35,4 +35,11 @@ export function imgSrcChanger() {
         imgSrcChanger.i = 0
     }
     iconHeartImg.src=imgSrcChanger.images[imgSrcChanger.i]
+}
+
+export function newFavoriteCityAdd (newCity) {
+    let newCityItem = document.createElement('div')
+    newCityItem.classList.add('favorite-city-item')
+    newCityItem.innerHTML = `<p>${newCity}</p>`
+    favoriteLocationsList.append(newCityItem)
 }

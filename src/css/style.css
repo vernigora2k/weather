@@ -139,8 +139,18 @@ section.weather-app {
                     justify-content: space-between;
                     height: 80px;
                     width: 100%;
-                    background-color: lightskyblue;
                 }
+
+                  .media__activated-city {
+                      margin-left: 10px;
+                      margin-top: 40px;
+                  }  
+
+                  .media__icon-favorite-city {
+                      margin-top: 25px;
+                      margin-right: 5px;
+                  }
+
             .row-main__media-menu {
                 height: 30px;
                 width: 300px;
@@ -174,4 +184,14 @@ section.weather-app {
                 height: 365px;
                 border: 1px solid black;
                 border-left: none;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                overflow-y: scroll;
             }
+.favorite-city-item {
+    margin-left: 20px;
+    line-height: 5px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 25px;
+}
