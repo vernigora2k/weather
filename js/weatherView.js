@@ -13,14 +13,15 @@ currentWeather('Tokio')
         console.log(mainScreenWeatherDescription)
         mainScreenWeatherDescription.innerHTML = data.data[0].weather.description
         mainScreenWeatherIcon.innerHTML = `<img src=../src/img/weather-icons/${data.data[0].weather.icon}.png width="140px">`
-        mainScreenTime.innerHTML = `${currentLocalTime('Tokio').then()}`
+        console.log(currentLocalTime('Asia/Tokyo').then())
+        mainScreenTime.innerHTML = `${currentLocalTime('Asia/Tokyo').then(data => data.datetime.slice(11,16))}`
     })
     .catch(alert)
     
-currentLocalTime('America/Mexico_City')
-    .then(data => {
-        console.log(data.datetime.slice(11,16))
-        return data.datetime.slice(11,16)
-    })
-    .catch(alert)
+// currentLocalTime('America/Mexico_City')
+//     .then(data => {
+//         console.log(data.datetime.slice(11,16))
+//         return data.datetime.slice(11,16)
+//     })
+//     .catch(alert)
 
