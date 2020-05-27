@@ -100,7 +100,6 @@ section.weather-app {
             }
 
                 .media__row1 {
-                    background-color: lightgreen;
                     font-size: 76px;
                     font-weight: 500;
                     height: 120px;
@@ -117,8 +116,11 @@ section.weather-app {
                     }
 
                 .media__row2 {
-                    background-color: lightsalmon;
+                    /* background-color: lightsalmon; */
                     height: 200px;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 30px
                 }
 
                 .media__row3 {

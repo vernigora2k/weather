@@ -1,5 +1,5 @@
 import { currentWeather, currentLocalTime } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime } from './UiElements.js';
 
 // button.addEventListener('click', () => {
 //     currentWeather()
@@ -12,7 +12,8 @@ currentWeather('Tokio')
         console.log(data.data[0].weather.description)
         console.log(mainScreenWeatherDescription)
         mainScreenWeatherDescription.innerHTML = data.data[0].weather.description
-        mainScreenWeatherIcon.innerHTML = `<img src=../src/img/weather-icons/${data.data[0].weather.icon}.png>`
+        mainScreenWeatherIcon.innerHTML = `<img src=../src/img/weather-icons/${data.data[0].weather.icon}.png width="140px">`
+        mainScreenTime.innerHTML = `${currentLocalTime('Tokio').then()}`
     })
     .catch(alert)
     
