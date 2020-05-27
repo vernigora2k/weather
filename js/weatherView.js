@@ -1,10 +1,13 @@
 import { currentWeather, currentLocalTime } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput } from './UiElements.js';
 
 // button.addEventListener('click', () => {
 //     currentWeather()
 // }) 
-currentWeather('Tokio')
+
+searchForm.addEventListener('submit', () => {
+    console.log(searchFormInput)
+    currentWeather(searchFormInput.value)
     .then(data => {
         console.log(data.data[0])
         mainScreenTemp.innerHTML = Math.round(data.data[0].temp) + '<sup>0</sup>'
@@ -18,6 +21,9 @@ currentWeather('Tokio')
     
     })
     .catch(alert)
+})
+
+
     
 
 
