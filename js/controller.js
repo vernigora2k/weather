@@ -1,4 +1,5 @@
 import {apiRequest} from './apiClient.js';
+import { iconHeartImg } from './UiElements.js';
 
 //currentWeather('Kyiv')
 
@@ -20,4 +21,18 @@ export function currentLocalTime(region) {
     return apiRequest(region)
         .then()
         .catch(alert)
+}
+
+export function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+imgSrcChanger.i = 0;
+imgSrcChanger.images = ['../src/img/heart-white.png', '../src/img/heart-black.png'];
+export function imgSrcChanger() {
+    imgSrcChanger.i++
+    if (imgSrcChanger.i > 1) {
+        imgSrcChanger.i = 0
+    }
+    iconHeartImg.src=imgSrcChanger.images[imgSrcChanger.i]
 }

@@ -1,5 +1,5 @@
-import { currentWeather, currentLocalTime } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput } from './UiElements.js';
+import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger } from './controller.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart } from './UiElements.js';
 
 // button.addEventListener('click', () => {
 //     currentWeather()
@@ -18,9 +18,14 @@ searchForm.addEventListener('submit', () => {
                 mainScreenTime.innerHTML = data.datetime.slice(11,16)
             })
             .catch(alert)
-    
+        mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
     })
     .catch(alert)
+})
+
+mainScreenIconHeart.addEventListener('click', () => {
+    //mainScreenIconHeart.innerHTML = `<img src="./src/img/heart-black.png" width="50px" alt=""></img>`
+    imgSrcChanger()
 })
 
 
