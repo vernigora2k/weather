@@ -1,12 +1,7 @@
 import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
-// button.addEventListener('click', () => {
-//     currentWeather()
-// }) 
-
 searchForm.addEventListener('submit', () => {
-    console.log(searchFormInput)
     currentWeather(searchFormInput.value)
     .then(data => {
         console.log(data.data[0])
@@ -23,13 +18,10 @@ searchForm.addEventListener('submit', () => {
     .catch(alert)
     .then(() => {
         if(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
-            console.log('Atata')
             imgSrcChanger('active')
         } else {
             iconHeartImg.src = '../src/img/heart-white.png'
         }
-        
-        
     })
 })
 

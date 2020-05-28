@@ -27,14 +27,10 @@ export function imgSrcChanger(status='inactive') {
     if (status == 'active') {
         iconHeartImg.src = '../src/img/heart-black.png'
     } else {
-        console.log('Atata2')
         imgSrcChanger.i++
         if (imgSrcChanger.i > 1) {
             imgSrcChanger.i = 0
         }
-        console.log(iconHeartImg.src)
-        console.log(iconHeartImg.src.slice(-24))
-        console.log(imgSrcChanger.images[imgSrcChanger.i].slice(2))
         if (iconHeartImg.src.slice(-24) == imgSrcChanger.images[imgSrcChanger.i].slice(2)){
             imgSrcChanger.images.reverse()
         }
@@ -53,7 +49,7 @@ export function iconHeartClassChange() {
 export function newFavoriteCityAdd (newCity) {
     let newCityItem = document.createElement('div')
     newCityItem.classList.add('favorite-city-item')
-    newCityItem.innerHTML = `<p class="favorite-city-item-p" id="${newCity}">${newCity}</p>`
+    newCityItem.innerHTML = `<p class="favorite-city-item-p" id="${newCity.split(' ').join('')}">${newCity}</p>`
     favoriteLocationsList.append(newCityItem)
 }
 
@@ -67,7 +63,7 @@ export function newFavoriteCityRemove (newCity) {
 }
 
 export function favoriteCityDublicateChecker(newCity) {
-    let favoriteCityItemP = document.querySelector(`#${newCity}`)
+    let favoriteCityItemP = document.querySelector(`#${newCity.split(' ').join('')}`)
     if(favoriteCityItemP) {
         return (newCity == favoriteCityItemP.innerHTML)
     }
