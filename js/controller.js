@@ -39,7 +39,7 @@ export function imgSrcChanger() {
 
 export function iconHeartClassChange() {
     if(!iconHeartImg.classList.contains('active')) {
-    iconHeartImg.classList.add('active')
+        iconHeartImg.classList.add('active')
     } else {
         iconHeartImg.classList.remove('active')
     }
@@ -52,3 +52,13 @@ export function newFavoriteCityAdd (newCity) {
     favoriteLocationsList.append(newCityItem)
 }
 
+export function newFavoriteCityRemove () {
+    
+    //if (favoriteCityItem.value)  
+}
+
+export function favoriteCityDublicateChecker(newCity) {
+    let favoriteCityItem = document.querySelector('.favorite-city-item')
+    console.log(favoriteCityItem)
+    return newCity == favoriteCityInList
+}
