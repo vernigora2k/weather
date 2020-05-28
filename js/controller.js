@@ -27,6 +27,7 @@ export function imgSrcChanger(status='inactive') {
     if (status == 'active') {
         iconHeartImg.src = '../src/img/heart-black.png'
     } else {
+        console.log('Atata2')
         imgSrcChanger.i++
         if (imgSrcChanger.i > 1) {
             imgSrcChanger.i = 0
