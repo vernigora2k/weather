@@ -32,6 +32,12 @@ export function imgSrcChanger(status='inactive') {
         if (imgSrcChanger.i > 1) {
             imgSrcChanger.i = 0
         }
+        console.log(iconHeartImg.src)
+        console.log(iconHeartImg.src.slice(-24))
+        console.log(imgSrcChanger.images[imgSrcChanger.i].slice(2))
+        if (iconHeartImg.src.slice(-24) == imgSrcChanger.images[imgSrcChanger.i].slice(2)){
+            imgSrcChanger.images.reverse()
+        }
         iconHeartImg.src = imgSrcChanger.images[imgSrcChanger.i]
     }
 }
