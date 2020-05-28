@@ -19,6 +19,17 @@ searchForm.addEventListener('submit', () => {
             })
             .catch(alert)
         mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
+    
+        if(mainScreenActivatedCity.innerHTML) {
+            console.log(mainScreenActivatedCity.innerHTML)
+            console.log(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML))
+            if (favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
+                console.log('undefined wtf')
+                imgSrcChanger()
+                iconHeartClassChange()
+            }
+        }    
+    
     })
     .catch(alert)
     .then(console.log('tatata'))
