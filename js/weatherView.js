@@ -21,7 +21,12 @@ searchForm.addEventListener('submit', () => {
         mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
     })
     .catch(alert)
-    .then(console.log('tatata'))
+    .then(() => {
+        if(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
+            console.log('Atata')
+            imgSrcChanger('active')
+        }
+    })
 })
 
 mainScreenIconHeart.addEventListener('click', () => {

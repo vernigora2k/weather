@@ -23,12 +23,16 @@ export function capitalizeFirstLetter(string) {
 
 imgSrcChanger.i = 0;
 imgSrcChanger.images = ['../src/img/heart-white.png', '../src/img/heart-black.png'];
-export function imgSrcChanger() {
-    imgSrcChanger.i++
-    if (imgSrcChanger.i > 1) {
-        imgSrcChanger.i = 0
+export function imgSrcChanger(status='inactive') {
+    if (status == 'active') {
+        iconHeartImg.src = '../src/img/heart-black.png'
+    } else {
+        imgSrcChanger.i++
+        if (imgSrcChanger.i > 1) {
+            imgSrcChanger.i = 0
+        }
+        iconHeartImg.src = imgSrcChanger.images[imgSrcChanger.i]
     }
-    iconHeartImg.src=imgSrcChanger.images[imgSrcChanger.i]
 }
 
 export function iconHeartClassChange() {
