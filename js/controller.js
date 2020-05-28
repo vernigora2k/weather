@@ -1,8 +1,6 @@
 import {apiRequest} from './apiClient.js';
 import { iconHeartImg, favoriteLocationsList } from './UiElements.js';
 
-//currentWeather('Kyiv')
-
 export function currentWeather(city) {
     const url = `units=M&city=${city}&key=8a42731f459a4057aef00d0a99c45c5a`
     const config = {"method": "GET"}
@@ -51,6 +49,7 @@ export function newFavoriteCityAdd (newCity) {
     newCityItem.classList.add('favorite-city-item')
     newCityItem.innerHTML = `<p class="favorite-city-item-p" id="${newCity.split(' ').join('')}">${newCity}</p>`
     favoriteLocationsList.append(newCityItem)
+    localStorage.setItem(`city-${newCity}`, newCity)
 }
 
 export function newFavoriteCityRemove (newCity) {
@@ -58,6 +57,7 @@ export function newFavoriteCityRemove (newCity) {
     favoriteCityItemP.forEach(city => {
         if (city.innerHTML == newCity) {
             city.parentNode.parentNode.removeChild(city.parentNode)
+            localStorage.removeItem(`city-${newCity}`)
         }  
     }) 
 }

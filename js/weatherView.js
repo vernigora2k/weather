@@ -2,7 +2,30 @@ import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger,
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
-    currentWeather(searchFormInput.value)
+   showCurrentWeather() 
+})
+
+mainScreenIconHeart.addEventListener('click', () => {
+    if (mainScreenActivatedCity.innerHTML) {
+        imgSrcChanger()
+        iconHeartClassChange()
+        if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
+            newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
+        } else {
+            newFavoriteCityRemove(mainScreenActivatedCity.innerHTML)
+        }
+    }
+})
+    
+// Object.keys(localStorage).forEach(function(key){
+//     console.log(localStorage.getItem(key));
+//  });
+
+//  searchFormInput.value = 'kyiv'
+//  showCurrentWeather('kyiv')
+
+function showCurrentWeather(city=searchFormInput.value) {
+    currentWeather(city)
     .then(data => {
         console.log(data.data[0])
         mainScreenTemp.innerHTML = Math.round(data.data[0].temp) + '<sup>0</sup>'
@@ -23,21 +46,4 @@ searchForm.addEventListener('submit', () => {
             iconHeartImg.src = '../src/img/heart-white.png'
         }
     })
-})
-
-mainScreenIconHeart.addEventListener('click', () => {
-    if (mainScreenActivatedCity.innerHTML) {
-        imgSrcChanger()
-        iconHeartClassChange()
-        if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
-            newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
-        } else {
-            newFavoriteCityRemove(mainScreenActivatedCity.innerHTML)
-        }
-    }
-})
-
-
-    
-
-
+}
