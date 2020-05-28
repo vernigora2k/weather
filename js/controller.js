@@ -48,7 +48,7 @@ export function iconHeartClassChange() {
 export function newFavoriteCityAdd (newCity) {
     let newCityItem = document.createElement('div')
     newCityItem.classList.add('favorite-city-item')
-    newCityItem.innerHTML = `<p>${newCity}</p>`
+    newCityItem.innerHTML = `<p class="favorite-city-item-p">${newCity}</p>`
     favoriteLocationsList.append(newCityItem)
 }
 
@@ -59,6 +59,12 @@ export function newFavoriteCityRemove () {
 
 export function favoriteCityDublicateChecker(newCity) {
     let favoriteCityItem = document.querySelector('.favorite-city-item')
+    let favoriteCityItemP = document.querySelector('.favorite-city-item-p')
     console.log(favoriteCityItem)
-    return newCity == favoriteCityInList
+    console.log(favoriteCityItemP)
+    console.log(newCity)
+    if(favoriteCityItemP) {
+        console.log(favoriteCityItemP.innerHTML)
+        return (newCity == favoriteCityItemP.innerHTML)
+    }
 }
