@@ -16,13 +16,22 @@ mainScreenIconHeart.addEventListener('click', () => {
         }
     }
 })
-    
-// Object.keys(localStorage).forEach(function(key){
-//     console.log(localStorage.getItem(key));
-//  });
 
+
+//TODO:
+let favoriteCityMassive = []
+Object.keys(localStorage).forEach(function(key){
+    console.log(localStorage.getItem(key));
+    if(key.slice(0,5) == 'city-')
+    favoriteCityMassive.push(localStorage.getItem(key))
+ });
+console.log(favoriteCityMassive)
+favoriteCityMassive.forEach(city => {
+    newFavoriteCityAdd(city)
+})
 //  searchFormInput.value = 'kyiv'
 //  showCurrentWeather('kyiv')
+
 
 function showCurrentWeather(city=searchFormInput.value) {
     currentWeather(city)
