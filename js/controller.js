@@ -52,8 +52,14 @@ export function newFavoriteCityAdd (newCity) {
     favoriteLocationsList.append(newCityItem)
 }
 
-export function newFavoriteCityRemove () {
-    
+export function newFavoriteCityRemove (newCity) {
+    let favoriteCityItemP = document.querySelectorAll('.favorite-city-item-p')
+    favoriteCityItemP.forEach(city => {
+        console.log(city.innerHTML)
+        if (city.innerHTML == newCity) {
+            city.parentNode.parentNode.removeChild(city.parentNode)
+        }  
+    }) 
     //if (favoriteCityItem.value)  
 }
 

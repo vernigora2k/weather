@@ -1,4 +1,4 @@
-import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker } from './controller.js';
+import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList } from './UiElements.js';
 
 // button.addEventListener('click', () => {
@@ -32,6 +32,8 @@ mainScreenIconHeart.addEventListener('click', () => {
         console.log(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML))
         if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
             newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
+        } else {
+            newFavoriteCityRemove(mainScreenActivatedCity.innerHTML)
         }
     }
 })
