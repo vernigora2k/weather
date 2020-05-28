@@ -28,7 +28,6 @@ mainScreenIconHeart.addEventListener('click', () => {
     if (mainScreenActivatedCity.innerHTML) {
         imgSrcChanger()
         iconHeartClassChange()
-        console.log(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML))
         if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
             newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
         } else {

@@ -49,7 +49,6 @@ export function newFavoriteCityAdd (newCity) {
 export function newFavoriteCityRemove (newCity) {
     let favoriteCityItemP = document.querySelectorAll('.favorite-city-item-p')
     favoriteCityItemP.forEach(city => {
-        console.log(city.innerHTML)
         if (city.innerHTML == newCity) {
             city.parentNode.parentNode.removeChild(city.parentNode)
         }  
@@ -58,7 +57,6 @@ export function newFavoriteCityRemove (newCity) {
 
 export function favoriteCityDublicateChecker(newCity) {
     let favoriteCityItemP = document.querySelector(`#${newCity}`)
-    console.log(favoriteCityItemP)
     if(favoriteCityItemP) {
         return (newCity == favoriteCityItemP.innerHTML)
     }
