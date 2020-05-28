@@ -21,6 +21,7 @@ searchForm.addEventListener('submit', () => {
         mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
     })
     .catch(alert)
+    .then(console.log('tatata'))
 })
 
 mainScreenIconHeart.addEventListener('click', () => {

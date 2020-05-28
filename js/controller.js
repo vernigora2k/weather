@@ -7,13 +7,7 @@ export function currentWeather(city) {
     const url = `units=M&city=${city}&key=8a42731f459a4057aef00d0a99c45c5a`
     const config = {"method": "GET"}
     return apiRequest(url, config)
-        .then(
-            // responseObj => {
-            // responseObj.data[0]
-            // console.log(responseObj)
-            // console.log(responseObj.data[0])
-            // console.log(responseObj.data[0].temp)}
-            )
+        .then()
         .catch(alert)
 }
 
@@ -48,7 +42,7 @@ export function iconHeartClassChange() {
 export function newFavoriteCityAdd (newCity) {
     let newCityItem = document.createElement('div')
     newCityItem.classList.add('favorite-city-item')
-    newCityItem.innerHTML = `<p class="favorite-city-item-p">${newCity}</p>`
+    newCityItem.innerHTML = `<p class="favorite-city-item-p" id="${newCity}">${newCity}</p>`
     favoriteLocationsList.append(newCityItem)
 }
 
