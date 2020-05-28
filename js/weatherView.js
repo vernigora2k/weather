@@ -19,17 +19,6 @@ searchForm.addEventListener('submit', () => {
             })
             .catch(alert)
         mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
-    
-        if(mainScreenActivatedCity.innerHTML) {
-            console.log(mainScreenActivatedCity.innerHTML)
-            console.log(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML))
-            if (favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
-                console.log('undefined wtf')
-                imgSrcChanger()
-                iconHeartClassChange()
-            }
-        }    
-    
     })
     .catch(alert)
     .then(console.log('tatata'))
@@ -37,10 +26,8 @@ searchForm.addEventListener('submit', () => {
 
 mainScreenIconHeart.addEventListener('click', () => {
     if (mainScreenActivatedCity.innerHTML) {
-        // let newCity = mainScreenActivatedCity.innerHTML
         imgSrcChanger()
         iconHeartClassChange()
-        // console.log(newCity)
         console.log(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML))
         if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
             newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)

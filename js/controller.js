@@ -54,17 +54,12 @@ export function newFavoriteCityRemove (newCity) {
             city.parentNode.parentNode.removeChild(city.parentNode)
         }  
     }) 
-    //if (favoriteCityItem.value)  
 }
 
 export function favoriteCityDublicateChecker(newCity) {
-    let favoriteCityItem = document.querySelector('.favorite-city-item')
-    let favoriteCityItemP = document.querySelector('.favorite-city-item-p')
-    console.log(favoriteCityItem)
+    let favoriteCityItemP = document.querySelector(`#${newCity}`)
     console.log(favoriteCityItemP)
-    console.log(newCity)
     if(favoriteCityItemP) {
-        console.log(favoriteCityItemP.innerHTML)
         return (newCity == favoriteCityItemP.innerHTML)
     }
 }
