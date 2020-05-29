@@ -35,12 +35,12 @@ export function addFavoriteCity (city) {
     localStorage.setItem(`city-${city}`, city)
 }
 
-export function newFavoriteCityRemove (newCity) {
-    let favoriteCityItemP = document.querySelectorAll('.favorite-city-item')
-    favoriteCityItemP.forEach(city => {
-        if (city.innerHTML == newCity) {
-            city.parentNode.parentNode.removeChild(city.parentNode)
-            localStorage.removeItem(`city-${newCity}`)
+export function removeFavoriteCity (city) {
+    let favoriteCityItem = document.querySelectorAll('.favorite-city-item')
+    favoriteCityItem.forEach(cityInList => {
+        if (cityInList.innerHTML == city) {
+            cityInList.parentNode.parentNode.removeChild(cityInList.parentNode)
+            localStorage.removeItem(`city-${city}`)
         }  
     }) 
 }
