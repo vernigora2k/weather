@@ -62,9 +62,9 @@ export function newFavoriteCityRemove (newCity) {
     }) 
 }
 
-export function favoriteCityDublicateChecker(newCity) {
-    let favoriteCityItemP = document.querySelector(`#${newCity.split(' ').join('')}`)
+export function checkfavoriteCityDublicate(city) {
+    const favoriteCityItemP = document.querySelector(`#${city.split(' ').join('')}`)
     if(favoriteCityItemP) {
-        return (newCity == favoriteCityItemP.innerHTML)
+        return (city === favoriteCityItemP.textContent)
     }
 }
