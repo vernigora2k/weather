@@ -1,4 +1,4 @@
-import { getWeather, getLocalTime, imgSrcChanger, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity } from './controller.js';
+import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
@@ -11,7 +11,13 @@ iconHeartImg.addEventListener('click', () => {
     if (!isActiveCityExist) {
         return
     }
-    imgSrcChanger()
+    if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.png') {
+        iconHeartImg.src = '../src/img/heart-black.png'
+    } else {
+        iconHeartImg.src = '../src/img/heart-white.png'
+    }
+    
+
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
         addFavoriteCity(isActiveCityExist)
     } else {
