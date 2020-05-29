@@ -1,32 +1,34 @@
-import { currentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
+import { getCurrentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showCurrentWeather() 
 })
+// searchForm.addEventListener('submit', showCurrentWeather)
 
 mainScreenIconHeart.addEventListener('click', () => {
-    if (mainScreenActivatedCity.innerHTML) {
-        imgSrcChanger()
-        iconHeartClassChange()
-        if (!favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
-            newFavoriteCityAdd(mainScreenActivatedCity.innerHTML)
-        } else {
-            newFavoriteCityRemove(mainScreenActivatedCity.innerHTML)
-        }
+    const isActiveCityExist = mainScreenActivatedCity.textContent;
+    if (!isActiveCityExist) {
+        return
+    }
+    imgSrcChanger()
+    iconHeartClassChange()
+    if (!favoriteCityDublicateChecker(isActiveCityExist)) {
+        newFavoriteCityAdd(isActiveCityExist)
+    } else {
+        newFavoriteCityRemove(isActiveCityExist)
     }
 })
 
-
 //TODO:
-let favoriteCityMassive = []
+let favoriteCities = []
 Object.keys(localStorage).forEach(function(key){
     console.log(localStorage.getItem(key));
     if(key.slice(0,5) == 'city-')
-    favoriteCityMassive.push(localStorage.getItem(key))
+    favoriteCities.push(localStorage.getItem(key))
  });
-console.log(favoriteCityMassive)
-favoriteCityMassive.forEach(city => {
+console.log(favoriteCities)
+favoriteCities.forEach(city => {
     newFavoriteCityAdd(city)
 })
 //  searchFormInput.value = 'kyiv'
@@ -34,7 +36,7 @@ favoriteCityMassive.forEach(city => {
 
 
 function showCurrentWeather(city=searchFormInput.value) {
-    currentWeather(city)
+    getCurrentWeather(city)
     .then(data => {
         console.log(data.data[0])
         mainScreenTemp.innerHTML = Math.round(data.data[0].temp) + '<sup>0</sup>'

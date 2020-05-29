@@ -11,7 +11,6 @@ body {
     width: 640px;
     height: 510px;
     background: #ffffff;
-    position: absolute;
     font-family: 'Barlow Semi Condensed';
     font-style: normal;
     font-weight: normal;
@@ -103,7 +102,7 @@ section.weather-app {
                 border-top: none;
             }
 
-                .media__row1 {
+                .media__temp {
                     font-size: 76px;
                     font-weight: 500;
                     height: 120px;
@@ -119,7 +118,7 @@ section.weather-app {
                         font-size: 45px;
                     }
 
-                .media__row2 {
+                .media__icon {
                     /* background-color: lightsalmon; */
                     height: 200px;
                     flex-direction: column;
@@ -131,11 +130,11 @@ section.weather-app {
                         font-weight: 500;
                     }
 
-                .media__row3 {
+                .media__details {
                     background-color: lightskyblue;
                 }
 
-                .media__row4 {
+                .media__favorite {
                     justify-content: space-between;
                     height: 80px;
                     width: 100%;

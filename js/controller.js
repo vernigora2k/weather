@@ -1,7 +1,7 @@
 import {apiRequest} from './apiClient.js';
 import { iconHeartImg, favoriteLocationsList } from './UiElements.js';
 
-export function currentWeather(city) {
+export function getCurrentWeather(city) {
     const url = `units=M&city=${city}&key=8a42731f459a4057aef00d0a99c45c5a`
     const config = {"method": "GET"}
     return apiRequest(url, config)

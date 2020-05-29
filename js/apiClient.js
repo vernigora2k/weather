@@ -1,11 +1,13 @@
 import { URLweather, URLtime } from "./config.js";
 
-export function apiRequest(urlParam, config) {
-    let url;
-    config ?  url = URLweather + urlParam : 
-              url = URLtime + urlParam
-   
-   return fetch(url, config)
+export function apiRequest(url, config) {
+    let URL;
+    if(config) {
+        URL = URLweather + url
+    } else {
+        URL = URLtime + url
+    }
+   return fetch(URL, config)
     .then(response => {
         return response.json()
     })

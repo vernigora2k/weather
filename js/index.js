@@ -1,2 +1,2 @@
-import {} from './weatherView.js';
-import {} from './controller.js';
+import './weatherView.js';
+import './controller.js';
