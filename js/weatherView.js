@@ -51,7 +51,6 @@ function showCurrentWeather(city=searchFormInput.value) {
             })
             .catch(alert)
     })
-    .catch(alert)
     .then(() => {
         if(checkfavoriteCityDublicate(mainScreenActivatedCity.textContent)) {
             imgSrcChanger('active')
@@ -59,4 +58,5 @@ function showCurrentWeather(city=searchFormInput.value) {
             iconHeartImg.src = '../src/img/heart-white.png'
         }
     })
+    .catch(alert)
 }
