@@ -1,7 +1,7 @@
 import {apiRequest} from './apiClient.js';
 import { iconHeartImg, favoriteLocationsList } from './UiElements.js';
 
-export function getCurrentWeather(city) {
+export function getWeather(city) {
     const url = `units=M&city=${city}&key=8a42731f459a4057aef00d0a99c45c5a`
     const config = {"method": "GET"}
     return apiRequest(url, config)
@@ -9,7 +9,7 @@ export function getCurrentWeather(city) {
         .catch(alert)
 }
 
-export function currentLocalTime(region) {
+export function getLocalTime(region) {
     return apiRequest(region)
         .then()
         .catch(alert)

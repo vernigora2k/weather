@@ -108,14 +108,15 @@ section.weather-app {
                     height: 120px;
                 }
 
-                    p.temp {
+                    span.temp {
                         margin-left: 20px;
                         margin-top: 40px;
                     }
 
                     sup {
                         font-weight: 300;
-                        font-size: 45px;
+                        font-size: 52px;
+                        margin-left: -10px;
                     }
 
                 .media__icon {
@@ -144,6 +145,10 @@ section.weather-app {
                       margin-left: 10px;
                       margin-top: 40px;
                   }  
+
+                    .activated-city {
+                        text-transform: capitalize;
+                    }
 
                   .media__icon-favorite-city {
                       margin-top: 25px;

@@ -1,4 +1,4 @@
-import { getCurrentWeather, currentLocalTime, capitalizeFirstLetter, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
+import { getWeather, getLocalTime, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, favoriteCityDublicateChecker, newFavoriteCityRemove } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
@@ -36,22 +36,24 @@ favoriteCities.forEach(city => {
 
 
 function showCurrentWeather(city=searchFormInput.value) {
-    getCurrentWeather(city)
-    .then(data => {
-        console.log(data.data[0])
-        mainScreenTemp.innerHTML = Math.round(data.data[0].temp) + '<sup>0</sup>'
-        mainScreenWeatherDescription.innerHTML = data.data[0].weather.description
-        mainScreenWeatherIcon.innerHTML = `<img src=../src/img/weather-icons/${data.data[0].weather.icon}.png width="140px">`
-        currentLocalTime(data.data[0].timezone)
-            .then(data => {
-                mainScreenTime.innerHTML = data.datetime.slice(11,16)
+    getWeather(city)
+    .then(response => {
+        console.log(response.data[0])
+        const data = response.data[0]
+        const {temp, weather: {description, icon}, timezone} = data
+        mainScreenTemp.textContent = Math.round(temp)
+        mainScreenWeatherDescription.textContent = description
+        mainScreenWeatherIcon.src = `../src/img/weather-icons/${icon}.png`
+        mainScreenActivatedCity.textContent = searchFormInput.value
+        getLocalTime(timezone)
+            .then(response => {
+                mainScreenTime.textContent = response.datetime.slice(11,16)
             })
             .catch(alert)
-        mainScreenActivatedCity.innerHTML = `${capitalizeFirstLetter(searchFormInput.value)}`
     })
     .catch(alert)
     .then(() => {
-        if(favoriteCityDublicateChecker(mainScreenActivatedCity.innerHTML)) {
+        if(favoriteCityDublicateChecker(mainScreenActivatedCity.textContent)) {
             imgSrcChanger('active')
         } else {
             iconHeartImg.src = '../src/img/heart-white.png'
