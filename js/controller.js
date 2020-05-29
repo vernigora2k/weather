@@ -27,14 +27,6 @@ export function imgSrcChanger(status='inactive') {
     }
 }
 
-export function iconHeartClassChange() {
-    if(!iconHeartImg.classList.contains('active')) {
-        iconHeartImg.classList.add('active')
-    } else {
-        iconHeartImg.classList.remove('active')
-    }
-}
-
 export function newFavoriteCityAdd (newCity) {
     let newCityItem = document.createElement('div')
     newCityItem.classList.add('favorite-city')
