@@ -1,5 +1,5 @@
 import {apiRequest} from './apiClient.js';
-import { iconHeartImg, favoriteLocationsList } from './UiElements.js';
+import { iconHeartImg, favoriteCitiesList } from './UiElements.js';
 
 export function getWeather(city) {
     const config = {"method": "GET"}
@@ -18,7 +18,7 @@ export function addFavoriteCity (city) {
     p.textContent = city
     p.id = city.split(' ').join('')
     div.appendChild(p)
-    favoriteLocationsList.append(div)
+    favoriteCitiesList.append(div)
     localStorage.setItem(`city-${city}`, city)
 }
 
@@ -33,8 +33,8 @@ export function removeFavoriteCity (city) {
 }
 
 export function checkfavoriteCityDublicate(city) {
-    const favoriteCityItem = document.querySelector(`#${city.split(' ').join('')}`)
-    if(favoriteCityItem) {
-        return (city === favoriteCityItem.textContent)
+    const favoriteCity = document.querySelector(`#${city.split(' ').join('')}`)
+    if(favoriteCity) {
+        return (city === favoriteCity.textContent)
     }
 }

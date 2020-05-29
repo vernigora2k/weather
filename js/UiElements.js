@@ -4,6 +4,6 @@ export const mainScreenWeatherDescription = document.querySelector('.description
 export const mainScreenTime = document.querySelector('.local-time');
 export const mainScreenActivatedCity = document.querySelector('.activated-city');
 export const iconHeartImg = document.querySelector('.icon-heart-img');
-export const favoriteLocationsList = document.querySelector('.locations-list-list');
+export const favoriteCitiesList = document.querySelector('.locations-list-list');
 export const searchForm = document.querySelector('.search');
 export const searchFormInput = document.querySelector('.search-input');

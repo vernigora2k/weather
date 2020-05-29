@@ -192,10 +192,15 @@ section.weather-app {
                 flex-wrap: nowrap;
                 overflow-y: scroll;
             }
-.favorite-city {
-    margin-left: 20px;
-    line-height: 5px;
-    height: 40px;
-    font-weight: 500;
-    font-size: 25px;
-}
+
+                .favorite-city {
+                    margin-left: 20px;
+                    line-height: 5px;
+                    height: 40px;
+                    font-weight: 500;
+                    font-size: 25px;
+                }
+
+                    .favorite-city-item {
+                        text-transform: capitalize;
+                    }
