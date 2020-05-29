@@ -30,13 +30,13 @@ export function imgSrcChanger(status='inactive') {
 export function addFavoriteCity (city) {
     let newCity = document.createElement('div')
     newCity.classList.add('favorite-city')
-    newCity.innerHTML = `<p class="favorite-city-item-p" id="${city.split(' ').join('')}">${city}</p>`
+    newCity.innerHTML = `<p class="favorite-city-item" id="${city.split(' ').join('')}">${city}</p>`
     favoriteLocationsList.append(newCity)
     localStorage.setItem(`city-${city}`, city)
 }
 
 export function newFavoriteCityRemove (newCity) {
-    let favoriteCityItemP = document.querySelectorAll('.favorite-city-item-p')
+    let favoriteCityItemP = document.querySelectorAll('.favorite-city-item')
     favoriteCityItemP.forEach(city => {
         if (city.innerHTML == newCity) {
             city.parentNode.parentNode.removeChild(city.parentNode)
