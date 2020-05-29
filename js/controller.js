@@ -41,7 +41,7 @@ export function removeFavoriteCity (city) {
         if (cityInList.innerHTML == city) {
             cityInList.parentNode.parentNode.removeChild(cityInList.parentNode)
             localStorage.removeItem(`city-${city}`)
-        }  
+        } 
     }) 
 }
 
