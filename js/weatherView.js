@@ -1,4 +1,4 @@
-import { getWeather, getLocalTime, imgSrcChanger, newFavoriteCityAdd, checkfavoriteCityDublicate, newFavoriteCityRemove } from './controller.js';
+import { getWeather, getLocalTime, imgSrcChanger, addFavoriteCity, checkfavoriteCityDublicate, newFavoriteCityRemove } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
@@ -13,7 +13,7 @@ iconHeartImg.addEventListener('click', () => {
     }
     imgSrcChanger()
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
-        newFavoriteCityAdd(isActiveCityExist)
+        addFavoriteCity(isActiveCityExist)
     } else {
         newFavoriteCityRemove(isActiveCityExist)
     }
@@ -28,7 +28,7 @@ Object.keys(localStorage).forEach(function(key){
  });
 console.log(favoriteCities)
 favoriteCities.forEach(city => {
-    newFavoriteCityAdd(city)
+    addFavoriteCity(city)
 })
 //  searchFormInput.value = 'kyiv'
 //  showCurrentWeather('kyiv')

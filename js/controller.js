@@ -27,12 +27,12 @@ export function imgSrcChanger(status='inactive') {
     }
 }
 
-export function newFavoriteCityAdd (newCity) {
-    let newCityItem = document.createElement('div')
-    newCityItem.classList.add('favorite-city')
-    newCityItem.innerHTML = `<p class="favorite-city-item-p" id="${newCity.split(' ').join('')}">${newCity}</p>`
-    favoriteLocationsList.append(newCityItem)
-    localStorage.setItem(`city-${newCity}`, newCity)
+export function addFavoriteCity (city) {
+    let newCity = document.createElement('div')
+    newCity.classList.add('favorite-city')
+    newCity.innerHTML = `<p class="favorite-city-item-p" id="${city.split(' ').join('')}">${city}</p>`
+    favoriteLocationsList.append(newCity)
+    localStorage.setItem(`city-${city}`, city)
 }
 
 export function newFavoriteCityRemove (newCity) {
