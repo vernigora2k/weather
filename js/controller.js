@@ -11,20 +11,22 @@ export function getLocalTime(region) {
 }
 
 export function addFavoriteCity (city) {
-    let newCity = document.createElement('div')
-    newCity.classList.add('favorite-city')
-
-    
-    newCity.innerHTML = `<p class="favorite-city-item" id="${city.split(' ').join('')}">${city}</p>`
-    favoriteLocationsList.append(newCity)
+    let div = document.createElement('div')
+    div.classList.add('favorite-city')
+    let p = document.createElement('p')
+    p.classList.add('favorite-city-item')
+    p.textContent = city
+    p.id = city.split(' ').join('')
+    div.appendChild(p)
+    favoriteLocationsList.append(div)
     localStorage.setItem(`city-${city}`, city)
 }
 
 export function removeFavoriteCity (city) {
-    let favoriteCityItem = document.querySelectorAll('.favorite-city-item')
-    favoriteCityItem.forEach(cityInList => {
-        if (cityInList.innerHTML == city) {
-            cityInList.parentNode.parentNode.removeChild(cityInList.parentNode)
+    let favoriteCities = document.querySelectorAll('.favorite-city-item')
+    favoriteCities.forEach(favoriteCity => {
+        if (favoriteCity.innerHTML == city) {
+            favoriteCity.parentNode.parentNode.removeChild(favoriteCity.parentNode)
             localStorage.removeItem(`city-${city}`)
         } 
     }) 

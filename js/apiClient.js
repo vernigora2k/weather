@@ -11,9 +11,7 @@ export function apiRequest(url, config) {
     .then(response => {
         return response.json()
     })
-    .catch(err => {
-        console.log(err);
-    });
+    .catch(console.log)
 }
 
     

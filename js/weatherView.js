@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, favoriteLocationsList, iconHeartImg } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showCurrentWeather() 
@@ -16,8 +16,6 @@ iconHeartImg.addEventListener('click', () => {
     } else {
         iconHeartImg.src = '../src/img/heart-white.png'
     }
-    
-
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
         addFavoriteCity(isActiveCityExist)
     } else {
@@ -25,7 +23,7 @@ iconHeartImg.addEventListener('click', () => {
     }
 })
 
-//TODO:
+//TODO:=======================================
 let favoriteCities = []
 Object.keys(localStorage).forEach(function(key){
     console.log(localStorage.getItem(key));
@@ -38,7 +36,7 @@ favoriteCities.forEach(city => {
 })
 //  searchFormInput.value = 'kyiv'
 //  showCurrentWeather('kyiv')
-
+//============================================
 
 function showCurrentWeather(city=searchFormInput.value) {
     getWeather(city)
