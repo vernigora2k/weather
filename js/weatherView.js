@@ -2,9 +2,9 @@ import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, 
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
-   showCurrentWeather() 
+   showWeather() 
 })
-// searchForm.addEventListener('submit', showCurrentWeather)
+// searchForm.addEventListener('submit', showWeather)
 
 iconHeartImg.addEventListener('click', () => {
     const isActiveCityExist = mainScreenActivatedCity.textContent;
@@ -38,7 +38,7 @@ favoriteCities.forEach(city => {
 //  showCurrentWeather('kyiv')
 //============================================
 
-function showCurrentWeather(city=searchFormInput.value) {
+function showWeather(city=searchFormInput.value) {
     getWeather(city)
     .then(response => {
         console.log(response.data[0])
