@@ -1,12 +1,12 @@
 import { getWeather, getLocalTime, imgSrcChanger, newFavoriteCityAdd, iconHeartClassChange, checkfavoriteCityDublicate, newFavoriteCityRemove } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, mainScreenIconHeart, favoriteLocationsList, iconHeartImg } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, favoriteLocationsList, iconHeartImg } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showCurrentWeather() 
 })
 // searchForm.addEventListener('submit', showCurrentWeather)
 
-mainScreenIconHeart.addEventListener('click', () => {
+iconHeartImg.addEventListener('click', () => {
     const isActiveCityExist = mainScreenActivatedCity.textContent;
     if (!isActiveCityExist) {
         return
@@ -53,7 +53,7 @@ function showCurrentWeather(city=searchFormInput.value) {
     })
     .then(() => {
         if(checkfavoriteCityDublicate(mainScreenActivatedCity.textContent)) {
-            imgSrcChanger('active')
+            iconHeartImg.src = '../src/img/heart-black.png'
         } else {
             iconHeartImg.src = '../src/img/heart-white.png'
         }
