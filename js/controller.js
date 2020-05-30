@@ -36,6 +36,7 @@ export function removeFavoriteCity(city) {
 function addToStorage(city) {
     let favoriteCities = JSON.parse(localStorage.getItem('favoriteCities'))
     if (favoriteCities){
+        favoriteCities = favoriteCities.filter(elem => elem != city) //delite dublicate
         favoriteCities.push(city)
     } else {
         favoriteCities = []
