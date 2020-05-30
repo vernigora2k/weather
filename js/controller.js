@@ -62,3 +62,7 @@ export function checkfavoriteCityDublicate(city) {
     }
 }
 
+export function chooseFavoriteCity(targetCity) {
+    console.log(event.target.closest('div'))
+    console.log(event.target.closest('div').childNodes[0].id)
+}

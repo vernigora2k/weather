@@ -1,5 +1,5 @@
-import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity } from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg } from './UiElements.js';
+import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, chooseFavoriteCity} from './controller.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -31,6 +31,8 @@ if(favoriteCities) {
 }
 searchFormInput.value = localStorage.getItem('lastWatchedCity')
 showWeather(localStorage.getItem('lastWatchedCity'))
+
+favoriteCitiesList.addEventListener('click', chooseFavoriteCity)
 
 function showWeather(city=searchFormInput.value) {
     getWeather(city)
