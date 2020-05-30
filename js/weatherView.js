@@ -1,8 +1,6 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity } from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg } from './UiElements.js';
 
-
-
 searchForm.addEventListener('submit', () => {
    showWeather() 
 })
@@ -37,7 +35,6 @@ showWeather(localStorage.getItem('lastWatchedCity'))
 function showWeather(city=searchFormInput.value) {
     getWeather(city)
     .then(response => {
-        console.log(response.data[0])
         const data = response.data[0]
         const {temp, weather: {description, icon}, timezone} = data
         mainScreenTemp.textContent = Math.round(temp)
