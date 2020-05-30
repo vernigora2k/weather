@@ -194,13 +194,19 @@ section.weather-app {
             }
 
                 .favorite-city {
-                    margin-left: 20px;
-                    line-height: 5px;
+                    margin-left: 10px;
+                    line-height: 0px;
                     height: 40px;
                     font-weight: 500;
                     font-size: 25px;
                 }
 
+                .favorite-city:hover {
+                    background-color: black;
+                    color: white
+                }
+
                     .favorite-city-item {
                         text-transform: capitalize;
+                        margin-left: 10px;
                     }
