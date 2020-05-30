@@ -24,16 +24,20 @@ iconHeartImg.addEventListener('click', () => {
 })
 
 //TODO:=======================================
+// let favoriteCities = []
+// Object.keys(localStorage).forEach(function(key){
+//     console.log(localStorage.getItem(key));
+//     if(key.slice(0,5) == 'city-')
+//     favoriteCities.push(localStorage.getItem(key))
+//  });
+// console.log(favoriteCities)
+// favoriteCities.forEach(city => {
+//     addFavoriteCity(city)
+// })
+
 let favoriteCities = []
-Object.keys(localStorage).forEach(function(key){
-    console.log(localStorage.getItem(key));
-    if(key.slice(0,5) == 'city-')
-    favoriteCities.push(localStorage.getItem(key))
- });
-console.log(favoriteCities)
-favoriteCities.forEach(city => {
-    addFavoriteCity(city)
-})
+localStorage.getItem
+
 //  searchFormInput.value = 'kyiv'
 //  showCurrentWeather('kyiv')
 //============================================

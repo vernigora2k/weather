@@ -10,7 +10,7 @@ export function getLocalTime(region) {
     return apiRequest(region)
 }
 
-export function addFavoriteCity (city) {
+export function addFavoriteCity(city) {
     let div = document.createElement('div')
     div.classList.add('favorite-city')
     let p = document.createElement('p')
@@ -19,17 +19,39 @@ export function addFavoriteCity (city) {
     p.id = city.split(' ').join('')
     div.appendChild(p)
     favoriteCitiesList.append(div)
-    localStorage.setItem(`city-${city}`, city)
+    addToStorage(city)
 }
 
-export function removeFavoriteCity (city) {
+export function removeFavoriteCity(city) {
     let favoriteCities = document.querySelectorAll('.favorite-city-item')
     favoriteCities.forEach(favoriteCity => {
         if (favoriteCity.innerHTML == city) {
             favoriteCity.parentNode.parentNode.removeChild(favoriteCity.parentNode)
-            localStorage.removeItem(`city-${city}`)
+            removeFromStorage(city)
+
         } 
     }) 
+}
+
+function addToStorage(city) {
+    let favoriteCities = JSON.parse(localStorage.getItem('favoriteCities'))
+    if (favoriteCities){
+        favoriteCities.push(city)
+    } else {
+        favoriteCities = []
+        favoriteCities.push(city)
+    }
+    localStorage.setItem('favoriteCities', JSON.stringify(favoriteCities))
+}
+
+function removeFromStorage(city) {
+    let favoriteCities = JSON.parse(localStorage.getItem('favoriteCities'))
+    favoriteCities.forEach((elem,i) => {
+        if (elem == city) {
+            favoriteCities.splice(i,1)
+        }
+    })
+    localStorage.setItem('favoriteCities', JSON.stringify(favoriteCities))
 }
 
 export function checkfavoriteCityDublicate(city) {
@@ -38,3 +60,4 @@ export function checkfavoriteCityDublicate(city) {
         return (city === favoriteCity.textContent)
     }
 }
+
