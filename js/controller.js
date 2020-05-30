@@ -1,5 +1,6 @@
-import {apiRequest} from './apiClient.js';
-import { iconHeartImg, favoriteCitiesList } from './UiElements.js';
+import { apiRequest } from './apiClient.js';
+import { favoriteCitiesList, searchFormInput } from './UiElements.js';
+import {showWeather} from './weatherView.js';
 
 export function getWeather(city) {
     const config = {"method": "GET"}
@@ -62,7 +63,8 @@ export function checkfavoriteCityDublicate(city) {
     }
 }
 
-export function chooseFavoriteCity(targetCity) {
-    console.log(event.target.closest('div'))
-    console.log(event.target.closest('div').childNodes[0].id)
+export function showTargetCityWeather() {
+    let city = event.target.closest('div').childNodes[0].textContent
+    searchFormInput.value = city
+    showWeather(city)
 }

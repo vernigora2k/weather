@@ -1,4 +1,4 @@
-import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, chooseFavoriteCity} from './controller.js';
+import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
@@ -29,12 +29,14 @@ if(favoriteCities) {
         addFavoriteCity(city)
     });
 }
+
 searchFormInput.value = localStorage.getItem('lastWatchedCity')
 showWeather(localStorage.getItem('lastWatchedCity'))
 
-favoriteCitiesList.addEventListener('click', chooseFavoriteCity)
+//TODO попробовать убрть функцию showTargetCityWeather и добавить ее колбеком
+favoriteCitiesList.addEventListener('click', showTargetCityWeather)
 
-function showWeather(city=searchFormInput.value) {
+export function showWeather(city=searchFormInput.value) {
     getWeather(city)
     .then(response => {
         const data = response.data[0]
