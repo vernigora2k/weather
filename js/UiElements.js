@@ -1,8 +1,14 @@
+export const mainMediaScreen = document.querySelector('.row-main__media-screen');
 export const mainScreenTemp = document.querySelector('.temp');
+export const mainScreenMediaIcon = document.querySelector('.media__icon');
 export const mainScreenWeatherIcon = document.querySelector('.media__weather-icon');
 export const mainScreenWeatherDescription = document.querySelector('.description');
 export const mainScreenTime = document.querySelector('.local-time');
 export const mainScreenActivatedCity = document.querySelector('.activated-city');
+export const mainScreenDetails = document.querySelector('.media__details');
+export const buttonNow = document.querySelector('.button-now');
+export const buttonDetails = document.querySelector('.button-details');
+export const buttonForecast = document.querySelector('.button-forecast');
 export const iconHeartImg = document.querySelector('.icon-heart-img');
 export const favoriteCitiesList = document.querySelector('.locations-list-list');
 export const searchForm = document.querySelector('.search');

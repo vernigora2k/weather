@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -36,10 +36,22 @@ showWeather(localStorage.getItem('lastWatchedCity'))
 //TODO попробовать убрть функцию showTargetCityWeather и добавить ее колбеком
 favoriteCitiesList.addEventListener('click', showTargetCityWeather)
 
+buttonDetails.addEventListener('click', () => {
+    buttonNow.classList.remove('button-active')
+    buttonForecast.classList.remove('button-active')
+    buttonDetails.classList.add('button-active')
+
+    mainScreenDetails.classList.remove('hidden')
+    mainMediaScreen.classList.add('media-screen--details')
+    mainScreenMediaIcon.classList.add('media__icon--active')
+    mainScreenWeatherIcon.classList.add('media__weather-icon--active')
+})
+
 export function showWeather(city=searchFormInput.value) {
     getWeather(city)
     .then(response => {
         const data = response.data[0]
+        console.log(data)
         const {temp, weather: {description, icon}, timezone} = data
         mainScreenTemp.textContent = Math.round(temp)
         mainScreenWeatherDescription.textContent = description
