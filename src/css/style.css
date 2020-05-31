@@ -205,6 +205,11 @@ section.weather-app {
                     background-color: rgb(194, 194, 194);
                 }
 
+                .favorite-city--active {
+                    color: white;
+                    background-color: black;
+                }
+
                     .favorite-city-item {
                         text-transform: capitalize;
                         margin-left: 10px;

@@ -64,6 +64,10 @@ export function checkfavoriteCityDublicate(city) {
 }
 
 export function showTargetCityWeather() {
+    let favoriteCities = document.querySelectorAll('.favorite-city')
+    favoriteCities.forEach(city => city.classList.remove('favorite-city--active'))
+    let cityParentTag = event.target.closest('.favorite-city')
+    cityParentTag.classList.add('favorite-city--active')
     let city = event.target.closest('div').childNodes[0].textContent
     searchFormInput.value = city
     showWeather(city)
