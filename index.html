@@ -40,7 +40,47 @@
                                 <img class="media__weather-icon" src="./src/img/weather-icons/c01d.png" width="140px">
                             </div>
                         </div>
-                        <div class="media__details hidden"></div>
+                        <div class="media__details hidden">
+                            <table class="table-details" width='298px' height='198px'>
+                                <tr>
+                                    <td class="cell-prop-wind">
+                                        <div class="flex">
+                                            <img src="./src/img/wind.svg" alt="wind" width="50px" style="padding-top: 3px;">
+                                            <span class="wind-dir">north</span>
+                                            <span class='wind-speed'></span>
+                                        </div>
+                                    </td>
+                                    <td class="cell-prop-pres">
+                                        <div class="flex">
+                                            <img src="./src/img/pressure.svg" alt="pressure" width="40px">
+                                            <span class="pressure">780 mb</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cell-prop-sunrize">
+                                        <div class="flex">
+                                            <img src="./src/img/sun.svg" alt="sunrize" width="20px">
+                                            <span class="sunrize">sunrize</span>
+                                            <img src="./src/img/moon.svg" alt="sunset" width="20px">
+                                            <span class="sunset">sunset</span>
+                                        </div>
+                                    </td>
+                                    <td class="cell-prop-solarrad">
+                                        <div class="flex">
+                                            <div>
+                                                <img src="./src/img/sun.svg" alt="sun" width="25px">
+                                                <img src="./src/img/radiation.svg" alt="radiation" width="25px">
+                                            </div>
+                                            <div>
+                                                <span style="font-size: 19px;">solar-radiation</span>
+                                            </div>
+                                                <span class="radiation"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="media__forecast hidden"></div>
                         <div class="media__favorite flex">
                             <div class="media__activated-city">
