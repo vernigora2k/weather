@@ -1,5 +1,6 @@
 export const mainMediaScreen = document.querySelector('.row-main__media-screen');
 export const mainScreenTemp = document.querySelector('.temp');
+export const mainScreenTempIcon = document.querySelector('.media__temp')
 export const mainScreenMediaIcon = document.querySelector('.media__icon');
 export const mainScreenWeatherIcon = document.querySelector('.media__weather-icon');
 export const mainScreenWeatherDescription = document.querySelector('.description');

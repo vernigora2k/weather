@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -33,19 +33,38 @@ if(favoriteCities) {
 searchFormInput.value = localStorage.getItem('lastWatchedCity')
 showWeather(localStorage.getItem('lastWatchedCity'))
 
-//TODO попробовать убрть функцию showTargetCityWeather и добавить ее колбеком
+
 favoriteCitiesList.addEventListener('click', showTargetCityWeather)
+
+buttonNow.addEventListener('click',() => {
+    buttonNow.classList.add('button-active')
+    buttonDetails.classList.remove('button-active')
+    buttonForecast.classList.remove('button-active')
+    mainScreenDetails.classList.add('hidden')
+    mainMediaScreen.classList.remove('media-screen--details')
+    mainScreenMediaIcon.classList.remove('media__icon--active')
+    mainScreenWeatherIcon.classList.remove('media__weather-icon--active')
+})
 
 buttonDetails.addEventListener('click', () => {
     buttonNow.classList.remove('button-active')
     buttonForecast.classList.remove('button-active')
     buttonDetails.classList.add('button-active')
-
     mainScreenDetails.classList.remove('hidden')
     mainMediaScreen.classList.add('media-screen--details')
     mainScreenMediaIcon.classList.add('media__icon--active')
     mainScreenWeatherIcon.classList.add('media__weather-icon--active')
+})
+
+buttonForecast.addEventListener('click', () => {
+    buttonForecast.classList.add('button-active')
+    buttonNow.classList.remove('button-active')
+    buttonDetails.classList.remove('button-active')
     
+    mainScreenTempIcon.classList.add('hidden')
+    mainScreenMediaIcon.classList.add('hidden')
+    mainScreenDetails.classList.add('hidden')
+
 })
 
 export function showWeather(city=searchFormInput.value) {
