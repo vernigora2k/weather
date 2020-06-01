@@ -2,9 +2,13 @@ import { apiRequest } from './apiClient.js';
 import { favoriteCitiesList, searchFormInput } from './UiElements.js';
 import {showWeather} from './weatherView.js';
 
-export function getWeather(city) {
+export function getWeather(city, forecast) {
     const config = {"method": "GET"}
-    return apiRequest(city, config)
+    if(forecast) {
+        return apiRequest(city, config, forecast)
+    } else {
+        return apiRequest(city, config)
+    }
 }
 
 export function getLocalTime(region) {

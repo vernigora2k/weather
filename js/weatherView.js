@@ -66,13 +66,21 @@ buttonForecast.addEventListener('click', () => {
     buttonForecast.classList.add('button-active')
     buttonNow.classList.remove('button-active')
     buttonDetails.classList.remove('button-active')
-    
     mainScreenWeatherForecast.classList.remove('hidden')
     mainMediaScreen.classList.add('hidden')
     mainMedia.classList.add('row-main__media-active')
-
+    showForecast()
 })
 
+
+export function showForecast(city=searchFormInput.value) {
+    getWeather(city, 'forecast')
+    .then(response => {
+        console.log(response)
+    })
+    .catch(alert)
+
+}
 
 
 export function showWeather(city=searchFormInput.value) {
