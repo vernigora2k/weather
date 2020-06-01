@@ -80,7 +80,7 @@ export function showForecast(city=searchFormInput.value) {
     getWeather(city, 'forecast')
     .then(response => {
         if(buttonForecastSeven.classList.contains('forecast--active')) {
-            showForecastPlate(response, 'seven')
+            showForecastPlate(response, 7)
         }
     })
     .catch(alert)
