@@ -280,6 +280,11 @@ section.weather-app {
                     margin-left: 10px;
                 }
 
+            .forecast--active {
+                color: white;
+                background-color: black;
+            }
+
         .row-main__locations-list {
             width: 300px;
         }
