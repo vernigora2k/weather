@@ -80,6 +80,9 @@ export function showForecast(city=searchFormInput.value) {
     getWeather(city, 'forecast')
     .then(response => {
         console.log(response)
+        const {city_name, timezone, data} = response
+        console.log(city_name)
+        
     })
     .catch(alert)
 

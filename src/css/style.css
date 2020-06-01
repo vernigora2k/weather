@@ -260,6 +260,26 @@ section.weather-app {
             border-bottom: 1px solid black;
         }
 
+        .forecast-desk {
+        }
+            .forecast-seven {
+                border-bottom: 1px solid black
+            }
+                .seven {
+                    font-size: 20px;
+                    margin-left: 15px;
+                }
+
+            .forecast-two-weeks {
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+            } 
+                
+                .two-weeks {
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+
         .row-main__locations-list {
             width: 300px;
         }
