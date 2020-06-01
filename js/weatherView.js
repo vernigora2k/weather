@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -44,6 +44,8 @@ buttonNow.addEventListener('click',() => {
     mainMediaScreen.classList.remove('media-screen--details')
     mainScreenMediaIcon.classList.remove('media__icon--active')
     mainScreenWeatherIcon.classList.remove('media__weather-icon--active')
+    mainScreenWeatherForecast.classList.add('hidden')
+    mainMediaScreen.classList.remove('hidden')
 })
 
 buttonDetails.addEventListener('click', () => {
@@ -54,6 +56,8 @@ buttonDetails.addEventListener('click', () => {
     mainMediaScreen.classList.add('media-screen--details')
     mainScreenMediaIcon.classList.add('media__icon--active')
     mainScreenWeatherIcon.classList.add('media__weather-icon--active')
+    mainScreenWeatherForecast.classList.add('hidden')
+    mainMediaScreen.classList.remove('hidden')
 })
 
 buttonForecast.addEventListener('click', () => {
@@ -61,9 +65,9 @@ buttonForecast.addEventListener('click', () => {
     buttonNow.classList.remove('button-active')
     buttonDetails.classList.remove('button-active')
     
-    mainScreenTempIcon.classList.add('hidden')
-    mainScreenMediaIcon.classList.add('hidden')
-    mainScreenDetails.classList.add('hidden')
+    mainScreenWeatherForecast.classList.remove('hidden')
+    mainMediaScreen.classList.add('hidden')
+   
 
 })
 

@@ -4,6 +4,7 @@ export const mainScreenTempIcon = document.querySelector('.media__temp')
 export const mainScreenMediaIcon = document.querySelector('.media__icon');
 export const mainScreenWeatherIcon = document.querySelector('.media__weather-icon');
 export const mainScreenWeatherDescription = document.querySelector('.description');
+export const mainScreenWeatherForecast = document.querySelector('.media__forecast');
 export const mainScreenTime = document.querySelector('.local-time');
 export const mainScreenActivatedCity = document.querySelector('.activated-city');
 export const mainScreenDetails = document.querySelector('.media__details');

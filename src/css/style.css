@@ -246,6 +246,10 @@ section.weather-app {
                     color: white
                 }
 
+        .media__forecast {
+            height: 384px;
+        }
+
         .row-main__locations-list {
             width: 300px;
         }
