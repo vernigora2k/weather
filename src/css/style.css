@@ -94,6 +94,11 @@ section.weather-app {
         .row-main__media {
         }
 
+        .row-main__media-active {
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+
             .row-main__media-screen {
                 height: 410px;
                 width: 300px;
@@ -149,7 +154,7 @@ section.weather-app {
 
                 .media__details {
                     background-color: rgb(180, 224, 252);
-                    width: 300px;
+                    width: 298px;
                     height: 200px;
                 }
 
