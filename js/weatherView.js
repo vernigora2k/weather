@@ -1,5 +1,5 @@
-import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu } from './UiElements.js';
+import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather, showForecastPlate} from './controller.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu, buttonForecastSeven} from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -79,10 +79,9 @@ buttonForecast.addEventListener('click', () => {
 export function showForecast(city=searchFormInput.value) {
     getWeather(city, 'forecast')
     .then(response => {
-        console.log(response)
-        const {city_name, timezone, data} = response
-        console.log(city_name)
-        
+        if(buttonForecastSeven.classList.contains('forecast--active')) {
+            showForecastPlate(response, 'seven')
+        }
     })
     .catch(alert)
 

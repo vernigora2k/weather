@@ -76,3 +76,9 @@ export function showTargetCityWeather() {
     searchFormInput.value = city
     showWeather(city)
 }
+
+export function showForecastPlate(response, days) {
+    console.log(response)
+    const {city_name, timezone, data} = response
+    
+}
