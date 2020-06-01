@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -46,6 +46,7 @@ buttonNow.addEventListener('click',() => {
     mainScreenWeatherIcon.classList.remove('media__weather-icon--active')
     mainScreenWeatherForecast.classList.add('hidden')
     mainMediaScreen.classList.remove('hidden')
+    mainMedia.classList.remove('row-main__media-active')
 })
 
 buttonDetails.addEventListener('click', () => {
@@ -58,6 +59,7 @@ buttonDetails.addEventListener('click', () => {
     mainScreenWeatherIcon.classList.add('media__weather-icon--active')
     mainScreenWeatherForecast.classList.add('hidden')
     mainMediaScreen.classList.remove('hidden')
+    mainMedia.classList.remove('row-main__media-active')
 })
 
 buttonForecast.addEventListener('click', () => {
@@ -67,9 +69,11 @@ buttonForecast.addEventListener('click', () => {
     
     mainScreenWeatherForecast.classList.remove('hidden')
     mainMediaScreen.classList.add('hidden')
-   
+    mainMedia.classList.add('row-main__media-active')
 
 })
+
+
 
 export function showWeather(city=searchFormInput.value) {
     getWeather(city)

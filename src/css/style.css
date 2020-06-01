@@ -235,7 +235,7 @@ section.weather-app {
 
             .row-main__media-menu {
                 height: 30px;
-                width: 300px;
+                width: 298px;
                 border: 1px solid black;
                 border-top: none;
             }
@@ -253,6 +253,7 @@ section.weather-app {
 
         .media__forecast {
             height: 384px;
+            border-bottom: 1px solid black;
         }
 
         .row-main__locations-list {

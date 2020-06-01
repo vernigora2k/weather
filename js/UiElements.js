@@ -1,4 +1,5 @@
 export const mainMediaScreen = document.querySelector('.row-main__media-screen');
+export const mainMedia = document.querySelector('.row-main__media')
 export const mainScreenTemp = document.querySelector('.temp');
 export const mainScreenTempIcon = document.querySelector('.media__temp')
 export const mainScreenMediaIcon = document.querySelector('.media__icon');
