@@ -91,14 +91,19 @@ export function showForecastPlate(response, days) {
             div.classList.add('forecastDay')
             let dateTime = document.createElement('p')
             dateTime.classList.add('datetime')
+            dateTime.textContent = datetime
             let highTemp = document.createElement('p')
             highTemp.classList.add('hightemp')
+            highTemp.textContent = 'max temp: ' + Math.round(high_temp)
             let lowTemp = document.createElement('p')
             lowTemp.classList.add('lowtemp')
+            lowTemp.textContent = 'low temp: ' + Math.round(low_temp)
             let Pop = document.createElement('p')
             Pop.classList.add('pop')
+            Pop.textContent = 'Prob.of.Prec. : ' + pop
             let Description = document.createElement('p')
-            Description.classList.add('description')
+            Description.classList.add('forecastDescription')
+            Description.textContent = description
             div.appendChild(dateTime)
             div.appendChild(highTemp)
             div.appendChild(lowTemp)
