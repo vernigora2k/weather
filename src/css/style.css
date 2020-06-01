@@ -279,6 +279,10 @@ section.weather-app {
                 text-align: center;
             }
 
+                .datetime {
+                    font-weight: 500;
+                }
+
                 .forecastDescription {
                     line-height: 13px;
                 }
