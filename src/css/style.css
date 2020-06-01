@@ -240,6 +240,10 @@ section.weather-app {
                 border-top: none;
             }
 
+            .media-menu--active {
+                width: 300px;
+            }
+
                 .menu-button {
                     width: 33.3%;
                     height: 30px;
@@ -252,7 +256,7 @@ section.weather-app {
                 }
 
         .media__forecast {
-            height: 384px;
+            height: 410px;
             border-bottom: 1px solid black;
         }
 

@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia } from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu } from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -47,6 +47,7 @@ buttonNow.addEventListener('click',() => {
     mainScreenWeatherForecast.classList.add('hidden')
     mainMediaScreen.classList.remove('hidden')
     mainMedia.classList.remove('row-main__media-active')
+    mainMediaMenu.classList.add('media-menu--active')
 })
 
 buttonDetails.addEventListener('click', () => {
@@ -60,6 +61,7 @@ buttonDetails.addEventListener('click', () => {
     mainScreenWeatherForecast.classList.add('hidden')
     mainMediaScreen.classList.remove('hidden')
     mainMedia.classList.remove('row-main__media-active')
+    mainMediaMenu.classList.add('media-menu--active')
 })
 
 buttonForecast.addEventListener('click', () => {
@@ -69,6 +71,7 @@ buttonForecast.addEventListener('click', () => {
     mainScreenWeatherForecast.classList.remove('hidden')
     mainMediaScreen.classList.add('hidden')
     mainMedia.classList.add('row-main__media-active')
+    mainMediaMenu.classList.remove('media-menu--active')
     showForecast()
 })
 
