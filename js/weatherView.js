@@ -1,5 +1,5 @@
 import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather, showForecastPlate} from './controller.js';
-import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu, buttonForecastSeven} from './UiElements.js';
+import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu, buttonForecastSeven, buttonForecastTwoWeeks} from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
@@ -75,18 +75,28 @@ buttonForecast.addEventListener('click', () => {
     showForecast()
 })
 
+buttonForecastSeven.addEventListener('click', () => {
 
-export function showForecast(city=searchFormInput.value) {
+})
+
+buttonForecastTwoWeeks.addEventListener('click', () => {
+    buttonForecastSeven.classList.remove('forecast--active')
+    buttonForecastTwoWeeks.classList.add('forecast--active')
+    showForecast(searchFormInput.value, 14)
+})
+
+export function showForecast(city=searchFormInput.value, days=7) {
     getWeather(city, 'forecast')
     .then(response => {
         if(buttonForecastSeven.classList.contains('forecast--active')) {
-            showForecastPlate(response, 7)
+            showForecastPlate(response, days)
+        } else {
+            showForecastPlate(response, 14)
         }
     })
     .catch(alert)
 
 }
-
 
 export function showWeather(city=searchFormInput.value) {
     getWeather(city)
