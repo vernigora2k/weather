@@ -261,7 +261,21 @@ section.weather-app {
         }
 
         .forecast-desk {
+            width: 298px;
+            height: 375px;
+            justify-content: space-between;
+            overflow-y: scroll;
+            padding-left: 15px;
+            padding-right: 15px;
         }
+
+            .forecastDay {
+                width: 120px;
+                height: 120px;
+                background-color: lightcyan;
+                margin-top: 10px;
+            }
+
             .forecast-seven {
                 border-bottom: 1px solid black
             }

@@ -1,5 +1,5 @@
 import { apiRequest } from './apiClient.js';
-import { favoriteCitiesList, searchFormInput } from './UiElements.js';
+import { favoriteCitiesList, searchFormInput, forecastDesk } from './UiElements.js';
 import {showWeather} from './weatherView.js';
 
 export function getWeather(city, forecast) {
@@ -99,7 +99,12 @@ export function showForecastPlate(response, days) {
             Pop.classList.add('pop')
             let Description = document.createElement('p')
             Description.classList.add('description')
-            
+            div.appendChild(dateTime)
+            div.appendChild(highTemp)
+            div.appendChild(lowTemp)
+            div.appendChild(Pop)
+            div.appendChild(Description)
+            forecastDesk.append(div)
         }
     })
 }
