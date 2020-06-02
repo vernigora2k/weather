@@ -76,7 +76,9 @@ buttonForecast.addEventListener('click', () => {
 })
 
 buttonForecastSeven.addEventListener('click', () => {
-
+    buttonForecastTwoWeeks.classList.remove('forecast--active')
+    buttonForecastSeven.classList.add('forecast--active')
+    showForecast(searchFormInput.value, 7)
 })
 
 buttonForecastTwoWeeks.addEventListener('click', () => {
