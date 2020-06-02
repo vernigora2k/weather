@@ -5,7 +5,6 @@ searchForm.addEventListener('submit', () => {
    showWeather() 
    showForecast()
 })
-// searchForm.addEventListener('submit', showWeather)
 
 iconHeartImg.addEventListener('click', () => {
     const isActiveCityExist = mainScreenActivatedCity.textContent;
@@ -33,7 +32,6 @@ if(favoriteCities) {
 
 searchFormInput.value = localStorage.getItem('lastWatchedCity')
 showWeather(localStorage.getItem('lastWatchedCity'))
-
 
 favoriteCitiesList.addEventListener('click', showTargetCityWeather)
 
@@ -107,7 +105,6 @@ export function showWeather(city=searchFormInput.value) {
     getWeather(city)
     .then(response => {
         const data = response.data[0]
-        console.log(data)
         const {temp, weather: {description, icon}, timezone, wind_cdir_full, wind_spd, pres, sunrise, sunset, solar_rad} = data
         mainScreenTemp.textContent = Math.round(temp)
         mainScreenWeatherDescription.textContent = description

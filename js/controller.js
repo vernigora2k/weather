@@ -79,15 +79,11 @@ export function showTargetCityWeather() {
 }
 
 export function showForecastPlate(response, days) {
-    console.log(response)
     const {city_name, timezone, data} = response
-    console.log(response.data.length)
     forecastDesk.innerHTML = ''
-    
     data.forEach((forecastDay, i) => {
         if(i<days) {
             const {datetime, high_temp, low_temp, pop, weather: {description}} = forecastDay
-            console.log(datetime, high_temp, low_temp, pop, description)
             let div = document.createElement('div')
             div.classList.add('forecastDay')
             let dateTime = document.createElement('p')
