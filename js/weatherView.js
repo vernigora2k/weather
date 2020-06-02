@@ -11,7 +11,6 @@ iconHeartImg.addEventListener('click', () => {
     if (!isActiveCityExist) {
         return
     }
-    console.log(iconHeartImg.src.slice(-24))
     if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.svg') {
         iconHeartImg.src = '../src/img/heart-black.svg'
     } else {
