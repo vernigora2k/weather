@@ -11,10 +11,10 @@ iconHeartImg.addEventListener('click', () => {
     if (!isActiveCityExist) {
         return
     }
-    if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.svg') {
-        iconHeartImg.src = '../src/img/heart-black.svg'
+    if (iconHeartImg.src.slice(-24) == '../img/heart-white.svg') {
+        iconHeartImg.src = '../img/heart-black.svg'
     } else {
-        iconHeartImg.src = '../src/img/heart-white.svg'
+        iconHeartImg.src = '../img/heart-white.svg'
     }
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
         addFavoriteCity(isActiveCityExist)
@@ -113,7 +113,7 @@ export function showWeather(city=searchFormInput.value) {
         const {temp, weather: {description, icon}, timezone, wind_cdir_full, wind_spd, pres, sunrise, sunset, solar_rad} = data
         mainScreenTemp.textContent = Math.round(temp)
         mainScreenWeatherDescription.textContent = description
-        mainScreenWeatherIcon.src = `../src/img/weather-icons/${icon}.png`
+        mainScreenWeatherIcon.src = `../img/weather-icons/${icon}.png`
         mainScreenActivatedCity.textContent = searchFormInput.value
         windDir.textContent = wind_cdir_full 
         windSpeed.textContent = Math.round(wind_spd) + ' m/s'
@@ -130,9 +130,9 @@ export function showWeather(city=searchFormInput.value) {
         })
     .then(() => {
         if(checkfavoriteCityDublicate(mainScreenActivatedCity.textContent)) {
-            iconHeartImg.src = '../src/img/heart-black.svg'
+            iconHeartImg.src = '../img/heart-black.svg'
         } else {
-            iconHeartImg.src = '../src/img/heart-white.svg'
+            iconHeartImg.src = '../img/heart-white.svg'
         }
     })
     .catch(errorHandler)
