@@ -73,7 +73,7 @@ section.weather-app {
 
             input.submit {
                 width: 8%;
-                background-image: url(../img/lupa-search.png);
+                background-image: url(../img/lupa-search.svg);
                 background-size: 20px;
                 background-repeat: no-repeat;
                 background-position: 5px 7px;

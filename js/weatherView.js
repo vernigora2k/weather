@@ -12,10 +12,10 @@ iconHeartImg.addEventListener('click', () => {
     if (!isActiveCityExist) {
         return
     }
-    if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.png') {
-        iconHeartImg.src = '../src/img/heart-black.png'
+    if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.svg') {
+        iconHeartImg.src = '../src/img/heart-black.svg'
     } else {
-        iconHeartImg.src = '../src/img/heart-white.png'
+        iconHeartImg.src = '../src/img/heart-white.svg'
     }
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
         addFavoriteCity(isActiveCityExist)
@@ -128,9 +128,9 @@ export function showWeather(city=searchFormInput.value) {
         })
     .then(() => {
         if(checkfavoriteCityDublicate(mainScreenActivatedCity.textContent)) {
-            iconHeartImg.src = '../src/img/heart-black.png'
+            iconHeartImg.src = '../src/img/heart-black.svg'
         } else {
-            iconHeartImg.src = '../src/img/heart-white.png'
+            iconHeartImg.src = '../src/img/heart-white.svg'
         }
     })
     .catch(alert)
