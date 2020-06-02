@@ -33,7 +33,6 @@ export function removeFavoriteCity(city) {
         if (favoriteCity.innerHTML == city) {
             favoriteCity.parentNode.parentNode.removeChild(favoriteCity.parentNode)
             removeFromStorage(city)
-
         } 
     }) 
 }
@@ -110,3 +109,7 @@ export function showForecastPlate(response, days) {
         }
     })
 }
+
+export function errorHandler() {
+    alert('Что-то пошло не так. Перегрузите страницу.')
+};

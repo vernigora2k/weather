@@ -1,4 +1,4 @@
-import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather, showForecastPlate} from './controller.js';
+import { getWeather, getLocalTime, addFavoriteCity, checkfavoriteCityDublicate, removeFavoriteCity, showTargetCityWeather, showForecastPlate, errorHandler} from './controller.js';
 import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, mainScreenTime, searchForm, searchFormInput, mainScreenActivatedCity, iconHeartImg, favoriteCitiesList, buttonDetails, buttonNow, buttonForecast, mainScreenDetails, mainMediaScreen, mainScreenMediaIcon, windDir, windSpeed, pressure, sunriseProp, sunsetProp, radiation, mainScreenTempIcon, mainScreenWeatherForecast, mainMedia, mainMediaMenu, buttonForecastSeven, buttonForecastTwoWeeks} from './UiElements.js';
 
 searchForm.addEventListener('submit', () => {
@@ -97,7 +97,7 @@ export function showForecast(city=searchFormInput.value, days=7) {
             showForecastPlate(response, 14)
         }
     })
-    .catch(alert)
+    .catch(errorHandler)
 
 }
 
@@ -120,7 +120,7 @@ export function showWeather(city=searchFormInput.value) {
             .then(response => {
                 mainScreenTime.textContent = response.datetime.slice(11,16)
             })
-            .catch(alert)
+            .catch(errorHandler)
         localStorage.setItem('lastWatchedCity', city)
         })
     .then(() => {
@@ -130,5 +130,5 @@ export function showWeather(city=searchFormInput.value) {
             iconHeartImg.src = '../src/img/heart-white.svg'
         }
     })
-    .catch(alert)
+    .catch(errorHandler)
 }
