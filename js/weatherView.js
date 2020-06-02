@@ -30,8 +30,16 @@ if(favoriteCities) {
     });
 }
 
-searchFormInput.value = localStorage.getItem('lastWatchedCity')
-showWeather(localStorage.getItem('lastWatchedCity'))
+// searchFormInput.value = localStorage.getItem('lastWatchedCity')
+// showWeather(localStorage.getItem('lastWatchedCity'))
+
+let lastWatchedCity = localStorage.getItem('lastWatchedCity')
+if(Boolean(lastWatchedCity)) {
+    searchFormInput.value = lastWatchedCity
+} else {
+    searchFormInput.value = 'bali'
+}
+showWeather(searchFormInput.value)
 
 favoriteCitiesList.addEventListener('click', showTargetCityWeather)
 
