@@ -1,6 +1,6 @@
 import { apiRequest } from './apiClient.js';
 import { favoriteCitiesList, searchFormInput, forecastDesk } from './UiElements.js';
-import {showWeather} from './weatherView.js';
+import {showWeather, showForecast} from './weatherView.js';
 
 export function getWeather(city, forecast) {
     const config = {"method": "GET"}
@@ -75,6 +75,7 @@ export function showTargetCityWeather() {
     let city = event.target.closest('div').childNodes[0].textContent
     searchFormInput.value = city
     showWeather(city)
+    showForecast(city)
 }
 
 export function showForecastPlate(response, days) {

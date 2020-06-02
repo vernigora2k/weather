@@ -3,6 +3,7 @@ import { mainScreenTemp, mainScreenWeatherDescription, mainScreenWeatherIcon, ma
 
 searchForm.addEventListener('submit', () => {
    showWeather() 
+   showForecast()
 })
 // searchForm.addEventListener('submit', showWeather)
 
@@ -86,6 +87,8 @@ buttonForecastTwoWeeks.addEventListener('click', () => {
     buttonForecastTwoWeeks.classList.add('forecast--active')
     showForecast(searchFormInput.value, 14)
 })
+
+
 
 export function showForecast(city=searchFormInput.value, days=7) {
     getWeather(city, 'forecast')
