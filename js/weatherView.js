@@ -11,10 +11,11 @@ iconHeartImg.addEventListener('click', () => {
     if (!isActiveCityExist) {
         return
     }
-    if (iconHeartImg.src.slice(-24) == '../img/heart-white.svg') {
-        iconHeartImg.src = '../img/heart-black.svg'
+    console.log(iconHeartImg.src.slice(-24))
+    if (iconHeartImg.src.slice(-24) == '/src/img/heart-white.svg') {
+        iconHeartImg.src = '../src/img/heart-black.svg'
     } else {
-        iconHeartImg.src = '../img/heart-white.svg'
+        iconHeartImg.src = '../src/img/heart-white.svg'
     }
     if (!checkfavoriteCityDublicate(isActiveCityExist)) {
         addFavoriteCity(isActiveCityExist)
