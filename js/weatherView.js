@@ -91,8 +91,6 @@ buttonForecastTwoWeeks.addEventListener('click', () => {
     showForecast(searchFormInput.value, 14)
 })
 
-
-
 export function showForecast(city=searchFormInput.value, days=7) {
     getWeather(city, 'forecast')
     .then(response => {
