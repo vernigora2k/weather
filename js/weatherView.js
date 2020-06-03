@@ -103,7 +103,6 @@ export function showForecast(city=searchFormInput.value, days=7) {
         }
     })
     .catch(errorHandler)
-
 }
 
 export function showWeather(city=searchFormInput.value) {
